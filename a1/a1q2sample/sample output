@@ -1,0 +1,32 @@
+running the command  
+./a1q2a ./input
+in terminal, generates the output below (This is not the only correct output, but make sure that a, b and c are executed in parallel):
+b1
+b2
+b3
+a1
+c1
+b4
+a2
+a3
+c3
+a4
+c2
+c4
+
+running  
+./a1q2b ./input
+ generates the output below (note that each program is executed after termination of the previous one):
+
+a1
+a2
+a3
+a4
+b1
+b2
+b3
+b4
+c1
+c2
+c3
+c4

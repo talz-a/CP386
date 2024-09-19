@@ -5,8 +5,8 @@
 using namespace std;
 
 int main() {
-  pid_t grandparent_id = getpid();
-  pid_t rc = fork();
+  int grandparent_id = getpid();
+  int rc = fork(); // 1 p -> rc = 1, 2 c rc = 0
 
   if (rc < 0) {
     cerr << "fork failed" << endl;
@@ -14,8 +14,8 @@ int main() {
   }
 
   if (rc == 0) {
-    pid_t parent_id = getpid();
-    pid_t child_rc = fork();
+    int parent_id = getpid();
+    int child_rc = fork();
 
     if (child_rc < 0) {
       cerr << "fork failed" << endl;
@@ -23,7 +23,7 @@ int main() {
     }
 
     if (child_rc == 0) {
-      pid_t grandchild_id = getpid();
+      int grandchild_id = getpid();
       cout << "My process id is " << grandchild_id << ", my parent's id is "
            << parent_id << ", and my grandparent's id is " << grandparent_id
            << endl;
