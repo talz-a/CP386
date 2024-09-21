@@ -31,7 +31,6 @@ int main() {
     execlp("wc", "wc", NULL);
 
     cerr << "Exec failed!" << std::endl;
-    return 1;
   } else {
     close(fd[0]);
     // do the things in here in parent
