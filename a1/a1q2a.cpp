@@ -21,14 +21,20 @@ int main() {
     args.push_back(line);
   }
 
-  int num_binaries = stoi(args[0]);
+  int num_binaries;
+  try {
+    num_binaries = stoi(args[0]);
+  } catch (const exception &) {
+    cerr << "Could not parse number of binaries" << endl;
+    return 1;
+  }
 
   for (int i = 1; i <= num_binaries; i++) {
-    int rc = fork();
+    const pid_t rc = fork();
 
     if (rc < 0) {
       cerr << "Fork failed" << endl;
-      exit(1);
+      return 1;
     }
 
     if (rc == 0) {
@@ -37,7 +43,7 @@ int main() {
 
       execv(binary_path, const_cast<char *const *>(exec_args));
       cerr << "execv failed for " << binary_path << endl;
-      exit(1);
+      return 1;
     }
   }
 
