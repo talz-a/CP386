@@ -13,7 +13,7 @@ int main() {
     return 1;
   }
 
-  pid_t pid1 = fork();
+  const pid_t pid1 = fork();
   if (pid1 == -1) {
     cerr << "Fork for child 1 failed!" << endl;
     return 1;
@@ -36,7 +36,7 @@ int main() {
     return 1;
   }
 
-  pid_t pid2 = fork();
+  const pid_t pid2 = fork();
   if (pid2 == -1) {
     cerr << "Fork for child 2 failed!" << endl;
     return 1;
