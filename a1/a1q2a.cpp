@@ -1,6 +1,7 @@
 #include <cstdlib>
 #include <cstring>
 #include <fstream>
+#include <sys/wait.h>
 #include <iostream>
 #include <unistd.h>
 #include <vector>

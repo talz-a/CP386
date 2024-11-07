@@ -26,7 +26,7 @@ int main() {
     dup(pipe1[1]);
     close(pipe1[1]);
 
-    execlp("ps", "ps", "axo", "sess", NULL);
+    execlp("ps", "ps", "xao", "sid", NULL);
     cerr << "Exec for ps failed!" << endl;
     return 1;
   }

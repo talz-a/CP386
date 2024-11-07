@@ -2,6 +2,7 @@
 #include <cstring>
 #include <fstream>
 #include <iostream>
+#include <sys/wait.h>
 #include <unistd.h>
 #include <vector>
 
